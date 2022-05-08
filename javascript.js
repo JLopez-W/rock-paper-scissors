@@ -1,32 +1,28 @@
 
-let items = ['rock','paper','scissors'];
+let items = ['ROCK','PAPER','SCISSORS'];
 
-function playerPlay() {
-    return items[Math.floor(Math.random()*items.length)];
-}
+let playerSelection = prompt("Choose your item! Rock, Paper, or Scissors?").toUpperCase();
 
 function computerPlay() {
     return items[Math.floor(Math.random()*items.length)];
 }
 
-let playerSelection = playerPlay();
 let computerSelection = computerPlay();
-
 
 function playSingle(_playerSelection, _computerSelection) {
         
-    if (playerSelection === 'rock'  &&  computerSelection === 'scissors') {
-        return "You win! Rock beats Scissors!";
-    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        return "You win! Paper beats Rock!";
-    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        return "You win! Scissors beat Paper!";
-    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        return "You lose! Paper beats Rock!";
-    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        return "You lose! Scissors beat Paper!";
-    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        return "You lose! Rock beats Scissors!";
+    if (playerSelection === 'ROCK'  &&  computerSelection === 'SCISSORS') {
+        return "You win! ROCK beats SCISSORS!";
+    } else if (playerSelection === 'PAPER' && computerSelection === 'ROCK') {
+        return "You win! PAPER beats ROCK!";
+    } else if (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
+        return "You win! SCISSORS beat PAPER!";
+    } else if (playerSelection === 'ROCK' && computerSelection === 'PAPER') {
+        return "You lose! PAPER beats ROCK!";
+    } else if (playerSelection === 'PAPER' && computerSelection === 'SCISSORS') {
+        return "You lose! SCISSORS beat PAPER!";
+    } else if (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
+        return "You lose! ROCK beats SCISSORS!";
     } else {
         return "It's a tie!";
     }
