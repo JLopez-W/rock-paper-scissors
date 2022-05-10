@@ -1,5 +1,5 @@
 
-let items = ['ROCK','PAPER','SCISSORS'];
+const items = ['ROCK','PAPER','SCISSORS'];
 
 let playerSelection = prompt('Choose your item! Rock, Paper, or Scissors?').toUpperCase();
 
@@ -10,7 +10,7 @@ function computerPlay() {
 let computerSelection = computerPlay();
 
 
-function playSingle(_playerSelection, _computerSelection) {
+function playSingle(playerSelection, computerSelection) {
         
     if (playerSelection === 'ROCK'  &&  computerSelection === 'SCISSORS') {
         return 'You win! ROCK beats SCISSORS!';
@@ -34,5 +34,5 @@ function playSingle(_playerSelection, _computerSelection) {
 
 console.log(playerSelection);
 console.log(computerSelection);
-console.log(playSingle());
+console.log(playSingle(playerSelection, computerSelection));
 
