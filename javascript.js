@@ -10,7 +10,7 @@ function computerPlay() {
 let computerSelection = computerPlay();
 
 
-function playSingle(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
         
     if ((playerSelection === 'ROCK'  &&  computerSelection === 'SCISSORS') || (playerSelection === 'PAPER' && computerSelection === 'ROCK') || (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
         return 'Player Point!' + ' ' + playerSelection + ' ' + 'beats' + ' ' + computerSelection + '' + '!';
@@ -26,4 +26,4 @@ function playSingle(playerSelection, computerSelection) {
 
 console.log(playerSelection);
 console.log(computerSelection);
-console.log(playSingle(playerSelection, computerSelection));
+console.log(playRound(playerSelection, computerSelection));
