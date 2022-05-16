@@ -19,11 +19,11 @@ function playerPlay() {
     return prompt('Choose your item! Rock, Paper, or Scissors?').toUpperCase();  
 }
 
-
 function computerPlay() {
     return items[Math.floor(Math.random()*items.length)];
 }
 
+game();
 
 function playRound(playerSelection, computerSelection) {
         
@@ -39,6 +39,18 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-console.log(playerSelection);
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+
+function game() { 
+    for (let i = 0; i < 5; i++) {  
+        if (playerScore < 3  && computerScore < 3) {  
+             playerSelection = playerPlay();
+             computerSelection = computerPlay();
+             playRound(playerSelection, computerSelection);
+             game();
+        } else if (playerScore === 3) {
+            console.log ('You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
+        } else if (computerScore === 3) {
+           console.log ('You Lose!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
+        }
+    }
+}
