@@ -15,7 +15,10 @@ function computerScoreAdd1() {
 let playerSelection;
 let computerSelection;
 
-let playerSelection = prompt('Choose your item! Rock, Paper, or Scissors?').toUpperCase();
+function playerPlay() {
+    return prompt('Choose your item! Rock, Paper, or Scissors?').toUpperCase();  
+}
+
 
 function computerPlay() {
     return items[Math.floor(Math.random()*items.length)];
