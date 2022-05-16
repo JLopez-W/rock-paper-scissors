@@ -1,13 +1,25 @@
 
 const items = ['ROCK','PAPER','SCISSORS'];
 
+let playerScore = 0;
+function playerScoreAdd1() {
+  playerScore += 1;
+}
+
+
+let computerScore = 0;
+function computerScoreAdd1() {
+    computerScore += 1;
+}
+
+let playerSelection;
+let computerSelection;
+
 let playerSelection = prompt('Choose your item! Rock, Paper, or Scissors?').toUpperCase();
 
 function computerPlay() {
     return items[Math.floor(Math.random()*items.length)];
 }
-
-let computerSelection = computerPlay();
 
 
 function playRound(playerSelection, computerSelection) {
