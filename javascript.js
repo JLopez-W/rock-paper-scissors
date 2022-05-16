@@ -25,19 +25,19 @@ function computerPlay() {
 
 game();
 
-function playRound(playerSelection, computerSelection) {
-        
+function playRound(playerSelection, computerSelection) {  
     if ((playerSelection === 'ROCK'  &&  computerSelection === 'SCISSORS') || (playerSelection === 'PAPER' && computerSelection === 'ROCK') || (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
-        return 'Player Point!' + ' ' + playerSelection + ' ' + 'beats' + ' ' + computerSelection + '' + '!';
-     } else if ((playerSelection === 'PAPER' && computerSelection === 'SCISSORS') || (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') || (playerSelection === 'ROCK' && computerSelection === 'PAPER')) {
-          return 'Computer Point!' + ' ' + computerSelection + ' ' + 'beats' + ' ' + playerSelection + '' + '!'; 
-     } else if (playerSelection === computerSelection) {
-         return 'It\'s a tie! No score.';
-     } else {
-         return 'What? Please try again.';
-    }
-
-}
+      playerScoreAdd1(); 
+      console.log ('Player Point!' + ' ' + playerSelection + ' ' + 'beats' + ' ' + computerSelection + '' + '!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore); 
+  } else if ((playerSelection === 'PAPER' && computerSelection === 'SCISSORS') || (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') || (playerSelection === 'ROCK' && computerSelection === 'PAPER')) {
+      computerScoreAdd1(); 
+      console.log ('Computer Point!' + ' ' + computerSelection + ' ' + 'beats' + ' ' + playerSelection + '' + '!'+ ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore); 
+  } else if (playerSelection === computerSelection) {
+      console.log ('It\'s a tie! No score.');  
+  } else {
+      console.log ('What? Please try again.');
+  }
+} 
 
 
 function game() { 
