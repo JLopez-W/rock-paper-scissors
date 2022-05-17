@@ -12,6 +12,17 @@ function computerScoreAdd1() {
     computerScore += 1;
 }
 
+let i;
+
+function checkScore() {
+	if (playerScore === 3 || computerScore === 3) {
+ 	    return i = 3;
+    } else if (playerScore + computerScore < 5) {
+        return i < 3;
+    }
+}
+
+
 let playerSelection;
 let computerSelection;
 
@@ -23,7 +34,9 @@ function computerPlay() {
     return items[Math.floor(Math.random()*items.length)];
 }
 
+
 game();
+
 
 function playRound(playerSelection, computerSelection) {  
     if ((playerSelection === 'ROCK'  &&  computerSelection === 'SCISSORS') || (playerSelection === 'PAPER' && computerSelection === 'ROCK') || (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
@@ -40,17 +53,20 @@ function playRound(playerSelection, computerSelection) {
 } 
 
 
+
 function game() { 
-    for (let i = 0; i < 5; i++) {  
+    for (i = checkScore(); i <= 3; i++) {  
         if (playerScore < 3  && computerScore < 3) {  
              playerSelection = playerPlay();
              computerSelection = computerPlay();
              playRound(playerSelection, computerSelection);
-             game();
+             game(); 
         } else if (playerScore === 3) {
-            return ('You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
+            console.log ('You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
+            return;
         } else if (computerScore === 3) {
-           return ('You Lose!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
+           console.log ('You Lose!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
+           return;
         }
     }
 }
