@@ -12,15 +12,9 @@ function computerScoreAdd1() {
     computerScore += 1;
 }
 
-let i;
-
 function checkScore() {
-	if (playerScore === 3 || computerScore === 3) {
- 	    return i = 3;
-    } else if (playerScore + computerScore < 5) {
-        return i < 3;
-    }
-}
+    return playerScore + computerScore;
+ }
 
 
 let playerSelection;
@@ -34,8 +28,8 @@ function computerPlay() {
     return items[Math.floor(Math.random()*items.length)];
 }
 
-
-game();
+let score = checkScore();
+game(score);
 
 
 function playRound(playerSelection, computerSelection) {  
