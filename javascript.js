@@ -58,11 +58,12 @@ function game() {
              game();
              return; 
         } else if (playerScore === 3) {
-            console.log ('You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
-            return;
+            return ('You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
         } else if (computerScore === 3) {
-           console.log ('You Lose!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
-           return;
+            return ('You Lose!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
+           
         }
     }
 }
+
+console.log(game());
