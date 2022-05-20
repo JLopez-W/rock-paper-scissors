@@ -49,12 +49,14 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() { 
-    for (i = checkScore(); i <= 3; i++) {  
+    for (let i = score; i <= 5; i++) {  
         if (playerScore < 3  && computerScore < 3) {  
              playerSelection = playerPlay();
              computerSelection = computerPlay();
              playRound(playerSelection, computerSelection);
-             game(); 
+             score = checkScore();
+             game();
+             return; 
         } else if (playerScore === 3) {
             console.log ('You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
             return;
