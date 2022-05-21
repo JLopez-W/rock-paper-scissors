@@ -47,7 +47,6 @@ function playRound(playerSelection, computerSelection) {
 } 
 
 
-
 function game() { 
     for (let i = score; i <= 5; i++) {  
         if (playerScore < 3  && computerScore < 3) {  
@@ -55,8 +54,6 @@ function game() {
              computerSelection = computerPlay();
              playRound(playerSelection, computerSelection);
              score = checkScore();
-             game();
-             return; 
         } else if (playerScore === 3) {
             return ('You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
         } else if (computerScore === 3) {
