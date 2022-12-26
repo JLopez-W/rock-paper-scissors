@@ -27,7 +27,6 @@ function computerPlay() {
 
 let computerSelection = computerPlay();
 let score = checkScore();
-//game(score);
 
 
 function playRound(playerSelection, computerSelection) {  
@@ -41,9 +40,7 @@ function playRound(playerSelection, computerSelection) {
       results.textContent = 'It\'s a tie! No score.';  
   }
 }
-//   } else {
-//       results.textContent = 'What? Please try again.';
-//   }
+
 
 
 buttons.forEach((button) => {
