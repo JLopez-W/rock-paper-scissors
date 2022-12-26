@@ -9,6 +9,11 @@ buttons.forEach((button) => {
     });
 });
 
+const container = document.querySelector('#container');
+const results = document.createElement('div');
+results.classList.add('results');
+container.appendChild(results);
+
 let playerScore = 0;
 function playerScoreAdd1() {
   playerScore += 1;
@@ -40,14 +45,14 @@ let score = checkScore();
 function playRound(playerSelection, computerSelection) {  
     if ((playerSelection === 'ROCK'  &&  computerSelection === 'SCISSORS') || (playerSelection === 'PAPER' && computerSelection === 'ROCK') || (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
       playerScoreAdd1(); 
-      console.log ('Player Point!' + ' ' + playerSelection + ' ' + 'beats' + ' ' + computerSelection + '' + '!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore); 
+      results.textContent = 'Player Point!' + ' ' + playerSelection + ' ' + 'beats' + ' ' + computerSelection + '' + '!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore; 
   } else if ((playerSelection === 'PAPER' && computerSelection === 'SCISSORS') || (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') || (playerSelection === 'ROCK' && computerSelection === 'PAPER')) {
       computerScoreAdd1(); 
-      console.log ('Computer Point!' + ' ' + computerSelection + ' ' + 'beats' + ' ' + playerSelection + '' + '!'+ ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore); 
+      results.textContent = 'Computer Point!' + ' ' + computerSelection + ' ' + 'beats' + ' ' + playerSelection + '' + '!'+ ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore; 
   } else if (playerSelection === computerSelection) {
-      console.log ('It\'s a tie! No score.');  
+      results.textContent = 'It\'s a tie! No score.';  
   } else {
-      console.log ('What? Please try again.');
+      results.textContent = 'What? Please try again.';
   }
 } 
 
