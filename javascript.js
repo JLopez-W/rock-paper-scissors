@@ -1,5 +1,13 @@
 
 const items = ['ROCK','PAPER','SCISSORS'];
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      playerSelection = button.id;
+      computerSelection = computerPlay();
+      playRound(playerSelection,computerSelection);
+    });
+});
 
 let playerScore = 0;
 function playerScoreAdd1() {
@@ -17,19 +25,16 @@ function checkScore() {
  }
 
 
-let playerSelection;
-let computerSelection;
+let computerSelection = computerPlay();
 
-function playerPlay() {
-    return prompt('Choose your item! Rock, Paper, or Scissors?').toUpperCase();  
-}
+
 
 function computerPlay() {
     return items[Math.floor(Math.random()*items.length)];
 }
 
 let score = checkScore();
-game(score);
+//game(score);
 
 
 function playRound(playerSelection, computerSelection) {  
@@ -47,20 +52,20 @@ function playRound(playerSelection, computerSelection) {
 } 
 
 
-function game() { 
-    for (let i = score; i <= 5; i++) {  
-        if (playerScore < 3  && computerScore < 3) {  
-             playerSelection = playerPlay();
-             computerSelection = computerPlay();
-             playRound(playerSelection, computerSelection);
-             score = checkScore();
-        } else if (playerScore === 3) {
-            return ('You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
-        } else if (computerScore === 3) {
-            return ('You Lose!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
+// function game() { 
+//     for (let i = score; i <= 5; i++) {  
+//         if (playerScore < 3  && computerScore < 3) {  
+//              playerSelection = playerPlay();
+//              computerSelection = computerPlay();
+//              playRound(playerSelection, computerSelection);
+//              score = checkScore();
+//         } else if (playerScore === 3) {
+//             return ('You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
+//         } else if (computerScore === 3) {
+//             return ('You Lose!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore);
            
-        }
-    }
-}
+//         }
+//     }
+// }
 
-console.log(game());
+// console.log(game()):
