@@ -15,11 +15,13 @@ const resetButton = document.createElement('button');
 resetButton.setAttribute('id', 'resetButton');
 resetButton.textContent = "Play Again";
 container.appendChild(resetButton);
+resetButton.style.display = 'none';
 
 function resetGame() {
     playerScore = 0;
     computerScore = 0;
     results.textContent = '';
+    resetButton.style.display = 'none';
 }
 
 resetButton.addEventListener('click', () => {
@@ -71,9 +73,11 @@ buttons.forEach((button) => {
         if (playerScore < 3  && computerScore < 3) {        
          playRound(playerSelection, computerSelection); 
         } else if (playerScore === 3) {
-            results.textContent = 'You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore;     
+            results.textContent = 'You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore;
+            resetButton.style.display = 'block';     
         } else if (computerScore === 3) {
-            results.textContent = 'You Lose!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore;            
+            results.textContent = 'You Lose!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore;
+            resetButton.style.display = 'block';              
         }
     });
     });
