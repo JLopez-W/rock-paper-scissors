@@ -27,6 +27,7 @@ function resetGame() {
     results.textContent = '';
     resetButton.style.display = 'none';
     scoreDisplay.textContent = playerScore + ' ' + 'vs' + ' ' + computerScore;
+    gameButtons.style.display = 'block';
 }
 
 resetButton.addEventListener('click', () => {
@@ -83,9 +84,11 @@ buttons.forEach((button) => {
          playRound(playerSelection, computerSelection); 
         } else if (playerScore === 3) {
             results.textContent = 'You Win!';
+            gameButtons.style.display = 'none';
             resetButton.style.display = 'block';     
         } else if (computerScore === 3) {
             results.textContent = 'You Lose!';
+            gameButtons.style.display = 'none';
             resetButton.style.display = 'block';              
         }
     });
