@@ -1,6 +1,7 @@
 
 const items = ['ROCK','PAPER','SCISSORS'];
 const buttons = document.querySelectorAll('button');
+const scoreDisplay = document.querySelector('#scoreDisplay');
 
 const container = document.querySelector('#container');
 const results = document.createElement('div');
@@ -17,11 +18,13 @@ resetButton.textContent = "Play Again";
 container.appendChild(resetButton);
 resetButton.style.display = 'none';
 
+
 function resetGame() {
     playerScore = 0;
     computerScore = 0;
     results.textContent = '';
     resetButton.style.display = 'none';
+    scoreDisplay.textContent = playerScore + ' ' + 'vs' + ' ' + computerScore;
 }
 
 resetButton.addEventListener('click', () => {
@@ -51,18 +54,22 @@ let computerSelection = computerPlay();
 let score = checkScore();
 
 
+
 function playRound(playerSelection, computerSelection) {  
     if ((playerSelection === 'ROCK'  &&  computerSelection === 'SCISSORS') || (playerSelection === 'PAPER' && computerSelection === 'ROCK') || (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
       playerScoreAdd1(); 
-      results.textContent = 'Player Point!' + ' ' + playerSelection + ' ' + 'beats' + ' ' + computerSelection + '' + '!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore; 
+      scoreDisplay.textContent = playerScore + ' ' + 'vs' + ' ' + computerScore;
+      results.textContent = 'Player Point!' + ' ' + playerSelection + ' ' + 'beats' + ' ' + computerSelection + '' + '!'; 
   } else if ((playerSelection === 'PAPER' && computerSelection === 'SCISSORS') || (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') || (playerSelection === 'ROCK' && computerSelection === 'PAPER')) {
       computerScoreAdd1(); 
-      results.textContent = 'Computer Point!' + ' ' + computerSelection + ' ' + 'beats' + ' ' + playerSelection + '' + '!'+ ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore; 
+      scoreDisplay.textContent = playerScore + ' ' + 'vs' + ' ' + computerScore;
+      results.textContent = 'Computer Point!' + ' ' + computerSelection + ' ' + 'beats' + ' ' + playerSelection + '' + '!' 
   } else if (playerSelection === computerSelection) {
-      results.textContent = 'It\'s a tie! No score.';  
+      scoreDisplay.textContent = playerScore + ' ' + 'vs' + ' ' + computerScore;
+      results.textContent = 'It\'s a tie! No point scored.';  
   }
+    
 }
-
 
 
 buttons.forEach((button) => {
@@ -73,10 +80,10 @@ buttons.forEach((button) => {
         if (playerScore < 3  && computerScore < 3) {        
          playRound(playerSelection, computerSelection); 
         } else if (playerScore === 3) {
-            results.textContent = 'You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore;
+            results.textContent = 'You Win!';
             resetButton.style.display = 'block';     
         } else if (computerScore === 3) {
-            results.textContent = 'You Lose!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore;
+            results.textContent = 'You Lose!';
             resetButton.style.display = 'block';              
         }
     });
