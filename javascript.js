@@ -89,9 +89,11 @@ buttons.forEach((button) => {
         } else if (computerScore === 3) {
             results.textContent = 'You Lose!';
             gameButtons.style.display = 'none';
-            resetButton.style.display = 'block';              
+            resetButton.style.display = 'block';                 
         }
     });
     });
+
+             
 
 

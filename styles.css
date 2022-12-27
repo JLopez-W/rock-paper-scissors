@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(240, 231, 217);
+    color: rgb(186, 96, 18);
+}
+
+h1, h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+#gameButtons, #scoreDisplay, .results {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
