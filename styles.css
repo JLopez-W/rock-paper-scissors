@@ -20,3 +20,14 @@ h1, h3 {
     justify-content: center;
 }
 
+#scoreDisplay {
+    padding: 28px;
+}
+
+.results{
+    padding: 20px;
+}
+
+#gameButtons {
+    padding-top: 20px;
+}

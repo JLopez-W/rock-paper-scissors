@@ -3,12 +3,14 @@ const items = ['ROCK','PAPER','SCISSORS'];
 const buttons = document.querySelectorAll('button');
 const gameButtons = document.querySelector('#gameButtons')
 const scoreDisplay = document.querySelector('#scoreDisplay');
+scoreDisplay.textContent = 'Ready... ' + ' ' + 'Set...'
 
 
 const container = document.querySelector('#container');
 const results = document.createElement('div');
 results.classList.add('results');
 container.insertBefore(results, gameButtons);
+results.textContent = 'Go!';
 
 const reset = document.createElement('div');
 reset.setAttribute('id', 'reset');
@@ -27,7 +29,8 @@ function resetGame() {
     computerScore = 0;
     results.textContent = '';
     resetButton.style.display = 'none';
-    scoreDisplay.textContent = playerScore + ' ' + 'vs' + ' ' + computerScore;
+    scoreDisplay.textContent = 'Ready... ' + ' ' + 'Set...'
+    results.textContent = 'Go!';
     gameButtons.style.display = 'block';
 }
 
