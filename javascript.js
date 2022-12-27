@@ -8,7 +8,7 @@ results.classList.add('results');
 container.appendChild(results);
 
 const reset = document.createElement('div');
-reset.classList.add('reset');
+reset.setAttribute('id', 'reset');
 container.appendChild(reset);
 
 const resetButton = document.createElement('button');
@@ -16,14 +16,16 @@ resetButton.setAttribute('id', 'resetButton');
 resetButton.textContent = "Play Again";
 container.appendChild(resetButton);
 
-function myFunction() {
-    resetButton = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    results.textContent = '';
+}
+
+resetButton.addEventListener('click', () => {
+        resetGame();
+});
+
 
 let playerScore = 0;
 function playerScoreAdd1() {
@@ -69,9 +71,9 @@ buttons.forEach((button) => {
         if (playerScore < 3  && computerScore < 3) {        
          playRound(playerSelection, computerSelection); 
         } else if (playerScore === 3) {
-            results.textContent = 'You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore;
+            results.textContent = 'You Win!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore;     
         } else if (computerScore === 3) {
-            results.textContent = 'You Lose!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore;
+            results.textContent = 'You Lose!' + ' ' + playerScore + ' ' + 'vs' + ' ' + computerScore;            
         }
     });
     });
