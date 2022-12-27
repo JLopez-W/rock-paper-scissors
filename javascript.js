@@ -30,7 +30,7 @@ function resetGame() {
     results.textContent = '';
     resetButton.style.display = 'none';
     scoreDisplay.textContent = 'Ready... ' + ' ' + 'Set...'
-    results.textContent = 'Go!';
+    results.textContent = 'GO!';
     gameButtons.style.display = 'block';
 }
 
