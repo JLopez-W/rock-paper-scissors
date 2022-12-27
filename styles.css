@@ -26,8 +26,15 @@ h1, h3 {
 
 .results{
     padding: 20px;
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 #gameButtons {
     padding-top: 20px;
+}
+
+#scoreDisplay {
+    font-size: 2rem;
+    
 }
