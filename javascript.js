@@ -1,12 +1,14 @@
 
 const items = ['ROCK','PAPER','SCISSORS'];
 const buttons = document.querySelectorAll('button');
+const gameButtons = document.querySelector('#gameButtons')
 const scoreDisplay = document.querySelector('#scoreDisplay');
+
 
 const container = document.querySelector('#container');
 const results = document.createElement('div');
 results.classList.add('results');
-container.appendChild(results);
+container.insertBefore(results, gameButtons);
 
 const reset = document.createElement('div');
 reset.setAttribute('id', 'reset');
