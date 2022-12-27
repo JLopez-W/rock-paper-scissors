@@ -7,6 +7,15 @@ const results = document.createElement('div');
 results.classList.add('results');
 container.appendChild(results);
 
+const reset = document.createElement('div');
+reset.classList.add('reset');
+container.appendChild(reset);
+
+const resetButton = document.createElement('button');
+resetButton.classList.add('resetButton');
+resetButton.textContent = "Play Again";
+container.appendChild(resetButton);
+
 let playerScore = 0;
 function playerScoreAdd1() {
   playerScore += 1;
