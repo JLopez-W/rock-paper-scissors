@@ -12,9 +12,18 @@ reset.classList.add('reset');
 container.appendChild(reset);
 
 const resetButton = document.createElement('button');
-resetButton.classList.add('resetButton');
+resetButton.setAttribute('id', 'resetButton');
 resetButton.textContent = "Play Again";
 container.appendChild(resetButton);
+
+function myFunction() {
+    resetButton = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
 
 let playerScore = 0;
 function playerScoreAdd1() {
