@@ -14,10 +14,11 @@ const reset = document.createElement('div');
 reset.setAttribute('id', 'reset');
 container.appendChild(reset);
 
+
 const resetButton = document.createElement('button');
 resetButton.setAttribute('id', 'resetButton');
 resetButton.textContent = "Play Again";
-container.appendChild(resetButton);
+reset.appendChild(resetButton);
 resetButton.style.display = 'none';
 
 
@@ -85,15 +86,12 @@ buttons.forEach((button) => {
         } else if (playerScore === 3) {
             results.textContent = 'You Win!';
             gameButtons.style.display = 'none';
-            resetButton.style.display = 'block';     
+            resetButton.style.display = 'block';             
         } else if (computerScore === 3) {
             results.textContent = 'You Lose!';
-            gameButtons.style.display = 'none';
-            resetButton.style.display = 'block';                 
+            gameButtons.style.display = 'none'; 
+            resetButton.style.display = 'block';                   
         }
     });
     });
-
-             
-
 
