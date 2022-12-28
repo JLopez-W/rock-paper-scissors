@@ -31,6 +31,7 @@ function resetGame() {
     playerScore = 0;
     computerScore = 0;
     results.textContent = '';
+    gameOver.textContent = '';
     resetButton.style.display = 'none';
     scoreDisplay.textContent = 'ready... ' + ' ' + 'set...'
     results.textContent = 'GO!';
@@ -90,15 +91,15 @@ buttons.forEach((button) => {
         if (playerScore < 3  && computerScore < 3) {        
          playRound(playerSelection, computerSelection); 
          score;
-        } else if (playerScore === 3) {
-            results.textContent = 'YOU WIN!';
-            gameButtons.style.display = 'none';
-            resetButton.style.display = 'block';             
-        } else if (computerScore === 3) {
-            results.textContent = 'YOU LOSE!';
-            gameButtons.style.display = 'none'; 
-            resetButton.style.display = 'block';                   
+            } if (playerScore === 3) {
+                gameButtons.style.display = 'none';
+                resetButton.style.display = 'block';
+                gameOver.textContent = 'YOU WIN!'             
+            } else if (computerScore === 3) {
+                gameButtons.style.display = 'none'; 
+                resetButton.style.display = 'block'; 
+                gameOver.textContent = 'YOU LOSE!'                    
         }
     });
-    });
+});
 
