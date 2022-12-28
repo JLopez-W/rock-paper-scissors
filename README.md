@@ -1,6 +1,5 @@
-## Rock - Paper - Scissors
+# Rock - Paper - Scissors
 ***
-
 ## Create a five-round 'Player vs Computer' game that keeps score and announces the winner.
 
 This was my first javascript project so it was quite challenging for me.
