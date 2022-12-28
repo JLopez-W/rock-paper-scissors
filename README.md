@@ -4,7 +4,7 @@
 
 This was my first javascript project so it was quite challenging for me.
 
-**In the first version of the game, I had to learn how to:
+_In the first version of the game, I had to learn how to:_
 
     * Call a function with parameters
     * Call that function from within another function
@@ -15,7 +15,7 @@ This was my first javascript project so it was quite challenging for me.
     
   I couldn't figure out why I kept getting "undefined" values in the single round function and got stuck on this problem for quite a while. It ended up being a problem with my variables' scope and how I called the function. Once that was fixed, it worked perfectly.
 
-**In the second version of the game, I had to learn how to use DOM methods to do the following:    
+_In the second version of the game, I had to learn how to use DOM methods to do the following:_   
     
     * Create new elements and add them to the DOM
     * Alter element properties
