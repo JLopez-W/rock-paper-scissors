@@ -89,6 +89,7 @@ buttons.forEach((button) => {
         score;
         if (playerScore < 3  && computerScore < 3) {        
          playRound(playerSelection, computerSelection); 
+         score;
         } else if (playerScore === 3) {
             results.textContent = 'YOU WIN!';
             gameButtons.style.display = 'none';
