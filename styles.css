@@ -30,13 +30,13 @@ h1, h3 {
     font-size: 2rem;
 }
 
-#gameButtons #resetButton {
-    padding-top: 20px;
-}
-
 .buttons {
     margin-right: 5px;
     margin-left: 5px;
+}
+
+#gameButtons #resetButton {
+    padding-top: 20px;
 }
 
 #gameOver {
