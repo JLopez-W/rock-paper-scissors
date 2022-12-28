@@ -23,6 +23,9 @@ resetButton.textContent = "Play Again";
 reset.appendChild(resetButton);
 resetButton.style.display = 'none';
 
+const gameOver = document.querySelector('#gameOver');
+gameOver.textContent = '';
+
 
 function resetGame() {
     playerScore = 0;
